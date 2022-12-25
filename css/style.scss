@@ -1,0 +1,28 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  color-scheme: dark light;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Karla", sans-serif;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  width: 100%;
+}
