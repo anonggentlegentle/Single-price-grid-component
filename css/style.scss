@@ -1,3 +1,11 @@
+$color-cyan: hsl(179, 62%, 43%);
+$color-yellow: hsl(71, 73%, 54%);
+$color-grey-light: hsl(204, 43%, 93%);
+$color-grey-blue: hsl(218, 22%, 67%);
+
+$bp-1: 43.75em; // 700px;
+$bp-2: 31.25em; // 500px;
+
 *,
 *::after,
 *::before {
@@ -17,6 +25,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Karla", sans-serif;
+  background-color: $color-grey-blue;
+  font-size: 1.6rem;
+
+  display: grid;
+  place-items: center;
 }
 
 img,
@@ -25,4 +38,125 @@ svg,
 video {
   display: block;
   width: 100%;
+}
+
+.container {
+  width: 90%;
+  max-width: 70rem;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media only screen and (max-width: $bp-2) {
+    grid-template-columns: repeat(1, 1fr);
+    margin: 1rem;
+  }
+
+  &__section {
+    &--1 {
+      background-color: $color-grey-light;
+
+      grid-column: 1 / -1;
+
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+    }
+
+    &--2 {
+      background-color: hsl(179, 66%, 37%);
+      color: $color-grey-light;
+
+      display: flex;
+      flex-direction: column;
+      row-gap: 2rem;
+    }
+
+    &--3 {
+      background-color: $color-cyan;
+      color: $color-grey-light;
+
+      display: flex;
+      flex-direction: column;
+      row-gap: 2rem;
+    }
+  }
+
+  &__price-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__price-amount {
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+  }
+
+  &__price {
+    font-size: 3.5rem;
+    font-weight: 700;
+  }
+
+  &__month {
+    opacity: 0.7;
+    font-weight: 400;
+  }
+
+  &__text {
+    line-height: 1.7;
+    color: $color-grey-blue;
+    font-weight: 400;
+
+    &--white {
+      color: $color-grey-light;
+      opacity: 0.8;
+    }
+  }
+
+  &__btn:link,
+  &__btn:visited {
+    background-color: $color-yellow;
+    text-decoration: none;
+    color: $color-grey-light;
+    border-radius: 0.5rem;
+    padding: 1.5rem 4rem;
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  &__btn:hover,
+  &__btn:active {
+    opacity: 0.65;
+  }
+
+  &__list {
+    list-style: none;
+    opacity: 0.7;
+  }
+}
+
+.heading-1 {
+  color: $color-cyan;
+  margin-bottom: 1rem;
+  font: 700;
+}
+
+.heading-2 {
+  font-weight: 700;
+  font-size: 1.8rem;
+
+  &--yellow {
+    color: $color-yellow;
+  }
+}
+
+.padding {
+  padding: 4rem;
+
+  @media only screen and (max-width: $bp-1) {
+    padding: 2.5rem 2rem;
+  }
 }
